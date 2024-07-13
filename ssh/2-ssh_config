@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-Host 54.235.45.210
+
+Host 100.27.213.75
 User ubuntu
 IdentityFile ~/.ssh/school
 PreferredAuthentications publickey

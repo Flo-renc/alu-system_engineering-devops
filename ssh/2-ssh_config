@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+Host 54.235.45.210
+User ubuntu
+IdentityFile ~/.ssh/school
+PreferredAuthentications publickey
+PasswordAuthentication no

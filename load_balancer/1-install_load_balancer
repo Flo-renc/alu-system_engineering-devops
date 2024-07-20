@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#a script to install load balancer
 
 # Function to install a package if not already installed
 function install() {

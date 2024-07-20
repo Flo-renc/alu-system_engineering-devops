@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+#installs and configures Nginx on an ubuntu server
+
+apt-get update -y
+apt-get install nginx -y
+
+#create custon htm page
+echo 'Holberton School for the win!' > /var/www/html/index.html
+
+# restart nginx to apply changes
+service nginx restart
+
+#ensure nginx starts on boot
+update-rc.d nginx defaults

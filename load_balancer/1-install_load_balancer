@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
-#a script to install load balancer
+#a script to install load balancer Function to install a package if not already installed
 
-# Function to install a package if not already installed
 function install() {
     command -v "$1" &> /dev/null
     if [ $? -ne 0 ]; then

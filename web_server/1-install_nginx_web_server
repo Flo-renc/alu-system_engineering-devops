@@ -1,14 +1,16 @@
 #!/usr/bin/env bash
-#installs and configures Nginx on an ubuntu server
+# This script installs and configures Nginx on an Ubuntu server
 
-apt-get update -y
-apt-get install nginx -y
+# Update package list and install Nginx
+sudo apt-get update -y
+sudo apt-get install -y nginx
 
-#create custon htm page
-echo 'Holberton School for the win!' > /var/www/html/index.html
+# Create a custom HTML page containing "Holberton School"
+echo 'Holberton School for the win!' | sudo tee /var/www/html/index.html
 
-# restart nginx to apply changes
-service nginx restart
+# Ensure Nginx is listening on port 80
+sudo sed -i 's/listen 80 default_server;/listen 80;/' /etc/nginx/sites-available/default
+sudo sed -i 's/listen \[::\]:80 default_server;/listen \[::\]:80;/' /etc/nginx/sites-available/default
 
-#ensure nginx starts on boot
-update-rc.d nginx defaults
+# Reload Nginx configuration to apply changes
+sudo nginx -s reload
